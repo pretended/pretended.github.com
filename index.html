@@ -1,22 +1,80 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <title>Tournee: Simply competitive app searcher</title>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-</head>
-<body>
-  <nav class="navbar navbar-inverse">
-    <div class="container-fluid">
-      <div class="navbar-header"></div>
-      <li class="nav-item"> 
-        <a class="nav-link" href ="#">HOME</a>
-      </li>
-    </div>
-  </nav>
-</body>
+
+<html>
+  <head>
+      <meta charset="utf-8">
+      <meta name="description" content="Página web oficial del servidor de roleplay de habla hispana ForasterosRP">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+      <title>ForasterosRP</title>
+
+      <link rel="icon" href="src/img/favicon.png">
+      <link href="https://fonts.googleapis.com/css?family=Montserrat:500" rel="stylesheet">
+      <link rel="stylesheet" type="text/css" href="src/css/style.css">
+      
+      <script src="https://kit.fontawesome.com/9f19093a36.js" crossorigin="anonymous"></script>
+  </head>
+
+  <body>
+      <div id="container">
+          <div id="centered">
+             <h3><img src="src/img/forasteros.png" width="250" height="250"></h3>
+              <p id="scroller"></p>
+              <div id="weblinks">
+                  <div class="weblink">
+                      <a style="text-decoration:none;" href="https://discord.gg/3eVaJzT">
+                          <img src="src/img/discord.png"
+                              height="44px" width="44px">
+                          <p>Discord</p>
+                      </a>
+                  </div>
+
+                  <div class="weblink">
+                      <a style="text-decoration:none;" href="https://twitter.com/forasterosrp">
+                          <img src="src/img/twitter.png" height="44px" width="44px">
+                          <p>Twitter</p>
+                      </a>
+                  </div>
+
+                  <div class="weblink">
+                      <a style="text-decoration:none;" href="https://forasterosrp.com/foro">
+                          <img src="src/img/web.png" height="44px" width="44px">
+                          <p>Foro</p>
+                      </a>
+                  </div>
+
+                  <div class="weblink">
+                      <a style="text-decoration:none;" href="https://www.youtube.com/channel/UCO7Nic6L3vkxX21HP6XHa-w">
+                          <img src="src/img/youtube.png" height="44px" width="44px">
+                          <p>Youtube</p>
+                      </a>
+                  </div>
+
+                  <div class="weblink">
+                      <a style="text-decoration:none;" href="https://twitch.tv/forasterosrp">
+                          <img src="src/img/twitch.png" height="44px" width="44px">
+                          <p>Twitch</p>
+                      </a>
+                  </div>
+                      </a>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </body>
 </html>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/typeit@6.1.1/dist/typeit.min.js"></script>
+<script>
+  var totalStrings = ["Comunidad de Roleplay", "Entra en discord y únete a nosotros", "Disfruta de una experiencia inigualable", "Servidor de habla hispana"];
+  var typeIt = new TypeIt("#scroller", { speed: 70, loop: true, waitUntilVisible: true });
+
+  totalStrings.forEach(function (str) {
+      typeIt.type(str);
+      typeIt.pause(1300);
+      typeIt.delete(str.length);
+  })
+
+  typeIt.go();
+</script>

@@ -40,7 +40,7 @@
       typeIt.type(str);
       typeIt.pause(1300);
       typeIt.delete(str.length);
-  })
+  })    
 
   typeIt.go();
 </script>
@@ -49,15 +49,17 @@
 
     function clock() {
         const currentDate = new Date()
-        const sec = currentDate.getSeconds()
-        const min = currentDate.getMinutes()
-        const hour = currentDate.getHours()
+        var  sec = currentDate.getSeconds()
+        var min = currentDate.getMinutes()
+        var hour = currentDate.getHours()
+
         if (hour < 10) {
-            hour = '0' + hour;
-        }if (min < 10) {
-            hour = '0' + hour;
+            hour = "0" + hour;
+        }
+        if (min < 10) {
+            min = "0" + min;
         }if (sec < 10) {
-            hour = '0' + hour;
+            sec = "0" +sec;
         }
         document.getElementById("clocker").innerHTML = hour + ":" + min + ":" + sec;
     }

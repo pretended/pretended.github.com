@@ -2,6 +2,9 @@
 <html>
   <head>
       <meta charset="utf-8">
+      <style>
+          * { cursor: url("/cursors/11.ani"), default; }
+      </style>
       <meta name="description" content="RobertWebPage">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -12,9 +15,11 @@
   </head>
 
   <body>
+      <div>
+          <p id = "clocker"></p>
+      </div>
     <div id="container">
         <div id="centered">
-            <h3><img src="icons/descarga.png" width="250" height="250"></h3>
             <p id="scroller" data-typeit-id="dliy1e3ej3c"><span class="ti-cursor" style="display:inline;position:relative;font:inherit;color:inherit;line-height:inherit;">|</span></p>
         </div>
         </div>
@@ -25,7 +30,10 @@
 
 <script src="https://cdn.jsdelivr.net/npm/typeit@6.1.1/dist/typeit.min.js"></script>
 <script>
-  var totalStrings = ["Welcome to e-Clash", "Hahahhfhashahhsh", "hoLALADSJFASDJSDLJ JSOEFERANDO"];
+    var element = new Date();
+    var today = element.getSeconds();
+    
+  var totalStrings = ["Welcome to e-Clash", today];
   var typeIt = new TypeIt("#scroller", { speed: 70, loop: true, waitUntilVisible: true });
 
   totalStrings.forEach(function (str) {
@@ -35,4 +43,22 @@
   })
 
   typeIt.go();
+</script>
+<script>
+    setInterval(clock, 1000);
+
+    function clock() {
+        const currentDate = new Date()
+        const sec = currentDate.getSeconds()
+        const min = currentDate.getMinutes()
+        const hour = currentDate.getHours()
+        if (hour < 10) {
+            hour = '0' + hour;
+        }if (min < 10) {
+            hour = '0' + hour;
+        }if (sec < 10) {
+            hour = '0' + hour;
+        }
+        document.getElementById("clocker").innerHTML = hour + ":" + min + ":" + sec;
+    }
 </script>

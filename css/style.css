@@ -76,6 +76,7 @@ html {
   @media only screen and (max-width: 600px) {
   
       .weblink {
+          color: white;
           width: 40%;
           margin-left: 10px;
           margin-right: 10px;

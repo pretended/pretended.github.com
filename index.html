@@ -15,11 +15,9 @@
   </head>
 
   <body>
-      <div>
-          <p id = "clocker"></p>
-      </div>
     <div id="container">
         <div id="centered">
+            <p id="clocker"></p>
             <p id="scroller" data-typeit-id="dliy1e3ej3c"><span class="ti-cursor" style="display:inline;position:relative;font:inherit;color:inherit;line-height:inherit;">|</span></p>
         </div>
         </div>
@@ -30,11 +28,9 @@
 
 <script src="https://cdn.jsdelivr.net/npm/typeit@6.1.1/dist/typeit.min.js"></script>
 <script>
-    var element = new Date();
-    var today = element.getSeconds();
-    
-  var totalStrings = ["Welcome to e-Clash", today];
-  var typeIt = new TypeIt("#scroller", { speed: 70, loop: true, waitUntilVisible: true });
+
+  var totalStrings = ["Welcome to e-Clash", "Website made by Robert", "Kelaric on GitHub" ];
+  var typeIt = new TypeIt("#scroller", { speed: 100, loop: true, waitUntilVisible: true });
 
   totalStrings.forEach(function (str) {
       typeIt.type(str);
@@ -59,7 +55,7 @@
         if (min < 10) {
             min = "0" + min;
         }if (sec < 10) {
-            sec = "0" +sec;
+            sec = "0" + sec;
         }
         document.getElementById("clocker").innerHTML = hour + ":" + min + ":" + sec;
     }

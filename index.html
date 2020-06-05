@@ -10,15 +10,37 @@
 
       <title>RobertWebPage</title>
       <link href="https://fonts.googleapis.com/css?family=Montserrat:500" rel="stylesheet">
-      <link rel="stylesheet" type="text/css" href="css/style.css">
-      <script src="https://kit.fontawesome.com/9f19093a36.js" crossorigin="anonymous"></script>
+      <link rel="stylesheet" type="text/css" href="css/miestilodehoja.css">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+
+      <style>
+          body {
+              background-image: url('/icons/fondo.jpg');
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+             background-size: cover;
+          }
+      </style>
   </head>
 
   <body>
+
     <div id="container">
         <div id="centered">
+            <div class="mt-3">
             <p id="clocker"></p>
+        </div>
+        <div class="mt-3">
             <p id="scroller" data-typeit-id="dliy1e3ej3c"><span class="ti-cursor" style="display:inline;position:relative;font:inherit;color:inherit;line-height:inherit;">|</span></p>
+            
+        </div>
+        <div class="mt-4">
+            <div class="progress">
+                <div id="bar" class="progress-bar progress-bar-striped progress-bar-animated bg-info" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 10%"></div>
+              </div>
+            </div>
+              <div class="mt-4">
+              <p id ="textBar"></p></div>
         </div>
         </div>
     </body>
@@ -42,7 +64,25 @@
 </script>
 <script>
     setInterval(clock, 1000);
+    upDateBar();
+    function days_passed(dt) {
+    var current = new Date(dt.getTime());
+    var previous = new Date(dt.getFullYear(), 0, 1);
 
+     return Math.ceil((current - previous + 1) / 86400000);
+}
+    function upDateBar() {
+        var days = 365;
+        const currentDate = new Date()
+        var year = currentDate.getFullYear();
+        var month = currentDate.getMonth();
+        var day = currentDate.getDay();
+        var percentage = days_passed(new Date(year, month, day)) / days * 100;
+
+        percentage = Math.round((percentage + Number.EPSILON) * 100) / 100;
+        document.getElementById("bar").style = "width: " + percentage.toString() + "%";
+        document.getElementById("textBar").innerHTML = year + " esta completado al " + percentage.toString() + " %";
+    }
     function clock() {
         const currentDate = new Date()
         var  sec = currentDate.getSeconds()

@@ -1,102 +1,17 @@
 
 <html>
-  <head>
-      <meta charset="utf-8">
-      <style>
-          * { cursor: url("/cursors/11.ani"), default; }
-      </style>
-      <meta name="description" content="RobertWebPage">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<head>
+    <meta charset="utf-8">
 
-      <title>RobertWebPage</title>
-      <link href="https://fonts.googleapis.com/css?family=Montserrat:500" rel="stylesheet">
-      <link rel="stylesheet" type="text/css" href="css/miestilodehoja.css">
-      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <meta name="description" content="RobertWebPage">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-      <style>
-          body {
-              background-image: url('/icons/fondo.jpg');
-            background-repeat: no-repeat;
-            background-attachment: fixed;
-             background-size: cover;
-          }
-      </style>
-  </head>
-
-  <body>
-
-    <div id="container">
-        <div id="centered">
-            <div class="mt-3">
-            <p id="clocker"></p>
-        </div>
-        <div class="mt-3">
-            <p id="scroller" data-typeit-id="dliy1e3ej3c"><span class="ti-cursor" style="display:inline;position:relative;font:inherit;color:inherit;line-height:inherit;">|</span></p>
-            
-        </div>
-        <div class="mt-4">
-            <div class="progress">
-                <div id="bar" class="progress-bar progress-bar-striped progress-bar-animated bg-info" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 10%"></div>
-              </div>
-            </div>
-              <div class="mt-4">
-              <p id ="textBar"></p></div>
-        </div>
-        </div>
-    </body>
+    <title>RobertWebPage</title>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:500" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/miestilodehoja.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+</head>
+<body>
+<div
+</body>
 </html>
-
-
-
-<script src="https://cdn.jsdelivr.net/npm/typeit@6.1.1/dist/typeit.min.js"></script>
-<script>
-
-  var totalStrings = ["Welcome to e-Clash", "Website made by Robert", "Kelaric on GitHub" ];
-  var typeIt = new TypeIt("#scroller", { speed: 100, loop: true, waitUntilVisible: true });
-
-  totalStrings.forEach(function (str) {
-      typeIt.type(str);
-      typeIt.pause(1300);
-      typeIt.delete(str.length);
-  })    
-
-  typeIt.go();
-</script>
-<script>
-    setInterval(clock, 1000);
-    upDateBar();
-    function days_passed(dt) {
-    var current = new Date(dt.getTime());
-    var previous = new Date(dt.getFullYear(), 0, 1);
-
-     return Math.ceil((current - previous + 1) / 86400000);
-}
-    function upDateBar() {
-        var days = 365;
-        const currentDate = new Date()
-        var year = currentDate.getFullYear();
-        var month = currentDate.getMonth();
-        var day = currentDate.getDay();
-        var percentage = days_passed(new Date(year, month, day)) / days * 100;
-
-        percentage = Math.round((percentage + Number.EPSILON) * 100) / 100;
-        document.getElementById("bar").style = "width: " + percentage.toString() + "%";
-        document.getElementById("textBar").innerHTML = year + " esta completado al " + percentage.toString() + " %";
-    }
-    function clock() {
-        const currentDate = new Date()
-        var  sec = currentDate.getSeconds()
-        var min = currentDate.getMinutes()
-        var hour = currentDate.getHours()
-
-        if (hour < 10) {
-            hour = "0" + hour;
-        }
-        if (min < 10) {
-            min = "0" + min;
-        }if (sec < 10) {
-            sec = "0" + sec;
-        }
-        document.getElementById("clocker").innerHTML = hour + ":" + min + ":" + sec;
-    }
-</script>

@@ -2,7 +2,12 @@ html {
 
     min-height: 500px;
 }
-  
+body {
+    background-image: url('/icons/fondo.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
   p, h3 {
       font-family: 'Montserrat', sans-serif;
       color: white;

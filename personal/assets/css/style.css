@@ -19,7 +19,7 @@ body {
 body::before {
   content: "";
   position: fixed;
-  background: #040404 url("../img/bg.jpg") top right no-repeat;
+  background: #040404 url("/icons/fondo.jpg") top right no-repeat;
   background-size: cover;
   left: 0;
   right: 0;
@@ -54,9 +54,10 @@ h1, h2, h3, h4, h5, h6 {
   transition: ease-in-out 0.3s;
   position: relative;
   height: 100vh;
+ 
   display: flex;
   align-items: center;
-  z-index: 997;
+  z-index: 1000;
   overflow-y: auto;
 }
 

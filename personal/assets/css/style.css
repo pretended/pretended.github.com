@@ -1175,3 +1175,10 @@ section .container {
 .credits a:hover {
   color: #fff;
 }
+.htbicon {
+    content: url('/icons/hackthebox.png');
+    height: 22px;
+    width: 22px;
+    display: flex;
+    color: white;
+  }

@@ -1,9 +1,4 @@
-/**
-* Template Name: Personal - v2.2.0
-* Template URL: https://bootstrapmade.com/personal-free-resume-bootstrap-template/
-* Author: BootstrapMade.com
-* License: https://bootstrapmade.com/license/
-*/
+
 !(function($) {
   "use strict";
 
@@ -49,7 +44,7 @@
     }
   });
 
-  // Activate/show sections on load with hash links
+  // Hash links activate/deactivate
   if (window.location.hash) {
     var initial_nav = window.location.hash;
     if ($(initial_nav).length) {

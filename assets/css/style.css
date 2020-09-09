@@ -497,6 +497,47 @@ section .container {
 .interests .icon-box:hover {
   background: rgba(255, 255, 255, 0.25);
 }
+/*--------------------------------------------------------------
+# Blog
+--------------------------------------------------------------*/
+
+.grid-container {
+  background: rgba(0, 0, 0, 0.9);
+  padding: 20px;
+  display: grid;
+  transition: ease-in-out 0.4s;
+  margin-left: 275px;
+  margin-right: 275px;
+}
+.blog {
+  color: #444444;
+}
+
+.blog .info-box img {
+  padding: 7px;
+  float: left;
+  margin-right: 1rem;
+}
+.divide {
+  margin-top: 20px;
+  padding-top: 15px;
+}
+.blog .info-box h3 {
+  font-size: 20px;
+  color: rgba(255, 255, 255, 0.5);
+  font-weight: 700;
+  margin: 10px 0 8px 68px;
+  color: #18d26e;
+}
+
+.blog .info-box p {
+  padding: 0;
+  color: #fff;
+  line-height: 24px;
+  font-size: 14px;
+  margin: 0 0 0 68px;
+}
+
 
 /*--------------------------------------------------------------
 # Resume
@@ -997,9 +1038,9 @@ section .container {
   bottom: 0;
   padding: 20px;
   font-weight: 700;
-  text-align: right;
+  text-align: left;
   font-size: 13px;
-  color: rgba(255, 255, 255, 0.7);
+  color: rgba(255, 255, 255, 1);
   z-index: 1;
 }
 
@@ -1007,7 +1048,7 @@ section .container {
   .credits {
     text-align: center;
     padding: 10px;
-    background: rgba(0, 0, 0, 0.8);
+    background: rgba(0, 0, 0, 0.7);
   }
 }
 

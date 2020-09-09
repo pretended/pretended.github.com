@@ -527,7 +527,7 @@ section .container {
   color: rgba(255, 255, 255, 0.5);
   font-weight: 700;
   margin: 10px 0 8px 68px;
-  color: #18d26e;
+  color: #00aeff;
 }
 
 .blog .info-box p {
@@ -858,22 +858,15 @@ section .container {
   float: left;
   background: rgba(255, 255, 255, 0.1);
 }
-.contact .info-box i.bx:hover {
-  background-color: #18d26e;
-  color: white;
-}
 
 
 .contact .info-box h3 {
   font-size: 20px;
-  color: rgba(255, 255, 255, 0.5);
+  color: white;
   font-weight: 700;
   margin: 10px 0 8px 68px;
 }
 
-.contact .info-box h3:hover {
-  color: white;
-}
 .contact .info-box p {
   padding: 0;
   color: #fff;
@@ -1037,9 +1030,9 @@ section .container {
   left: 0;
   bottom: 0;
   padding: 20px;
-  font-weight: 700;
+  font-weight: 600;
   text-align: left;
-  font-size: 13px;
+  font-size: 12px;
   color: rgba(255, 255, 255, 1);
   z-index: 1;
 }
@@ -1057,9 +1050,6 @@ section .container {
   transition: 0.3s;
 }
 
-.credits a:hover {
-  color: #fff;
-}
 .htbicon {
     content: url('/icons/hackthebox.png');
     height: 22px;

@@ -501,14 +501,6 @@ section .container {
 # Blog
 --------------------------------------------------------------*/
 
-.grid-container {
-  background: rgba(0, 0, 0, 0.9);
-  padding: 20px;
-  display: grid;
-  transition: ease-in-out 0.4s;
-  margin-left: 275px;
-  margin-right: 275px;
-}
 .blog {
   color: #444444;
 }
@@ -526,8 +518,13 @@ section .container {
   font-size: 20px;
   color: rgba(255, 255, 255, 0.5);
   font-weight: 700;
-  margin: 10px 0 8px 68px;
+  margin: 10px -200px 8px 68px;
   color: #00aeff;
+
+}
+.blog .info-box h3:hover {
+  color: #65ceff;
+
 }
 
 .blog .info-box p {
@@ -535,10 +532,12 @@ section .container {
   color: #fff;
   line-height: 24px;
   font-size: 14px;
-  margin: 0 0 0 68px;
+  margin: 0 -200px 0 0px;
 }
 
-
+#code {
+  background-color: red;
+}
 /*--------------------------------------------------------------
 # Resume
 --------------------------------------------------------------*/

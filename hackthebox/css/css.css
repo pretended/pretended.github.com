@@ -151,6 +151,8 @@ body {
     display: block;
     margin-left: auto;
     margin-right: auto;
+    margin-top: 25px;
+    
   }
 .section-title h2 {
   font-size: 14px;
@@ -176,9 +178,44 @@ body {
 .section-title p {
   margin: 0;
   margin: -15px 0 15px 0;
-  font-size: 36px;
+  font-size: 30px;
   font-weight: 700;
   text-transform: uppercase;
   font-family: "Poppins", sans-serif;
   color: #fff;
+}
+
+.write-up-section h2 {
+  font-size: 18px;
+  font-weight: 800;
+  padding: 0;
+  line-height: 1px;
+  margin: 35px 0 20px 15px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: white;
+  font-family: "Poppins", sans-serif;
+}
+.write-up-section .paragraph {
+  margin: 0 100px 15px 15px;
+  font-size: 15px;
+  font-weight: 500;
+  font-family: "Poppins", sans-serif;
+  color: #fff;
+}
+.write-up-section .mini-desc {
+  margin-top: 10px;
+  font-size: 14px;
+  font-weight: 500;
+  color: rgba(206, 206, 206, 0.7);
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+}
+.write-up-section h2::after {
+  content: "";
+  width: 120px;
+  height: 1px;
+  display: inline-block;
+  background: rgb(0, 225, 255);
+  margin: 4px 10px;
 }

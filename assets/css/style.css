@@ -526,7 +526,14 @@ section .container {
   color: #65ceff;
 
 }
-
+.blog .info-box .horz-line {
+    border-left: 6px solid green;
+    height: 500px;
+    position: absolute;
+    left: 50%;
+    margin-left: -3px;
+    top: 0;
+}
 .blog .info-box p {
   padding: 0;
   color: #fff;
@@ -535,8 +542,23 @@ section .container {
   margin: 0 -200px 0 0px;
 }
 
-#code {
-  background-color: red;
+@media (max-width: 942px) {
+  .divide {
+    margin-top: 10px;
+  padding-top: 15px;
+  }
+  .blog .info-box p {
+    margin: 0 0 0 0;
+    align-items: center;
+  }
+  .blog .info-box h3 {
+    font-size: 16px;
+    color: rgba(255, 255, 255, 0.5);
+    font-weight: 700;
+    margin: 0px 0 8px 68px;
+    color: #00aeff;
+  
+  }
 }
 /*--------------------------------------------------------------
 # Resume

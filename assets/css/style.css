@@ -1056,3 +1056,6 @@ section .container {
     display: flex;
     color: white;
   }
+.box-image-round {
+  border-radius: 55%;
+}

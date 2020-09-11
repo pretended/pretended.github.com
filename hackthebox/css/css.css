@@ -203,6 +203,7 @@ body {
   font-family: "Poppins", sans-serif;
   color: #fff;
 }
+
 .write-up-section .mini-desc {
   margin-top: 10px;
   font-size: 14px;
@@ -218,4 +219,30 @@ body {
   display: inline-block;
   background: rgb(0, 225, 255);
   margin: 4px 10px;
+}
+
+@media (max-width: 942px) {
+
+  .write-up-section .paragraph {
+    margin: 0 0 0 0;
+    font-size: 13px;
+    font-weight: 500;
+    font-family: "Poppins", sans-serif;
+    color: #fff;
+  }
+  .write-up-section h2::after {
+    width: 0px;
+    height: 0px;
+  }
+  .write-up-section h2 {
+    font-size: 18px;
+    font-weight: 800;
+    padding: 0;
+    line-height: 1px;
+    margin: 35px 0 20px 0px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    color: white;
+    font-family: "Poppins", sans-serif;
+  }
 }
